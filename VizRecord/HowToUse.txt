@@ -1,0 +1,26 @@
+﻿This file gives a bit of instructions about the project and how to use it (not indended as markdown file)
+
+1) In the Form1.cs the Encoder class property ffmpePath needs to be specified to reflect your system path that
+leads to the location of your ffmpeg executable.
+Ffmpeg is availible under an open liscence at the following address: https://www.gyan.dev/ffmpeg/builds/
+Scroll down to "release builds" and select the "ffmpeg-release-full.7z"
+For MacOS or Linux operating systems downloads may be found here: https://ffmpeg.org/download.html
+
+2) In Form1.cs the Encoder class property ffmpegArgs needs to specify the RTMP server hosted locally on your machine
+to do this please install the Wowza Streaming Engine and use the 30 day free trial which will grant you a product key
+A free trial for the Wowza Streaming Engine can be found here: https://www.wowza.com/?utm_term=wowza%20streaming%20engine&utm_campaign=NorthAmerica_NonBrand_WowzaVideo&utm_source=adwords&utm_medium=ppc&hsa_acc=9130632643&hsa_cam=20261309038&hsa_grp=153755578047&hsa_ad=661385342573&hsa_src=g&hsa_tgt=kwd-310910197596&hsa_kw=wowza%20streaming%20engine&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw4ZWkBhA4EiwAVJXwqW9XFpu6Cb8mXgEWNKVxWo9xNTI2_eZwf7NetREtOTZZwBx5g_c-cRoC1T8QAvD_BwE
+To view the playback footage you may need to install a compatible video player that can handle playback
+in one of the formats provided by Wowza or any other RTMP service of your choice
+I suggest using VLC: https://www.videolan.org/vlc/
+
+3) GET method: To use the GET method from the API with Postman please do the following:
+Specify the URL as: https://localhost:5001/api/Viz
+
+4) POST method: To use the POST method from the API with Postman please do the following:
+Specify the URL as: http://localhost:5000/api/Viz/DISPLAY
+Add a header with the Key = "Content-Type" and Value = "application/json"
+Select Body as "raw" and provide the following body:
+{
+  "monitor": "\\\\.\\DISPLAY1"
+}
+Specific display may be specified depending on your monitors (such as 1, 2, 3 etc);
